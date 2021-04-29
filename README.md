@@ -27,7 +27,7 @@ Response
 }
 ```
 
-### CPU 사용률이 급격하게 증가하는 원리
+#### CPU 사용률이 급격하게 증가하는 원리
 Ref: https://javacan.tistory.com/entry/41
 
 Java에서 String을 합치는 연산을 수행할 때 + 연산자를 사용하면 상당한 비효율을 발생시킨다.
@@ -42,9 +42,21 @@ for(int i=0; i<1024; i++) {
 
 
 ### GET /foo/bot
+Query String
+| key  | type   | description          |
+| ---- | ------ | -------------------- |
+| name | string | 단순 식별 *생략 가능  |
+
+Response
+```
+{
+    "id": "0",
+    "name": <name>
+}
+```
 
 
-### Memory 사용률이 급격하게 증가하는 원리
+#### Memory 사용률이 급격하게 증가하는 원리
 
 한번 요청이 들어오면 bot인스턴스를 1000만개 만들도록 구현했다.
 요청이 처리될 때까지 해당 인스턴스들이 Heap 메모리 영역에 잔존하여 메모리 사용률이 증가하게 된다.
