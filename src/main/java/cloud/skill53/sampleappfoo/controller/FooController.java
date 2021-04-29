@@ -30,8 +30,8 @@ public class FooController {
     }
 
     @GetMapping("/bot")
-    public BotDto getBot(@RequestParam(defaultValue = "sample") String botName) {
-        List<BotDto> bots = botService.cloneBot(botName);
+    public BotDto getBot(@RequestParam(defaultValue = "sample") String name) {
+        List<BotDto> bots = botService.cloneBot(name);
         return botService.getOriginBot(bots);
     }
 
