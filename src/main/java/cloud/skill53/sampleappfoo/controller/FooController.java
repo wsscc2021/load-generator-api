@@ -15,7 +15,7 @@ import cloud.skill53.sampleappfoo.service.BotService;
 import cloud.skill53.sampleappfoo.service.KeyService;
 
 @RestController
-@RequestMapping("/foo")
+@RequestMapping("/")
 public class FooController {
     @Autowired
     private BotService botService = new BotService();
