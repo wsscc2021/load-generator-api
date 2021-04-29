@@ -2,7 +2,7 @@
 요청을 보냈을 때 서버에 CPU 사용률이 급격하게 증가하는 간단한 API 서버입니다.
 HPA, 모니터링 등의 CPU 사용률 변화에 따른 동작이 필요할 때 유용하게 사용할 수 있습니다.
 
-### GET /foo
+### GET /
 Response
 ```
 {
@@ -13,7 +13,7 @@ Response
 ```
 
 
-### GET /foo/key
+### GET /key
 Query String
 | key  | type   | description          |
 | ---- | ------ | -------------------- |
@@ -41,7 +41,7 @@ for(int i=0; i<1024; i++) {
 
 
 
-### GET /foo/bot
+### GET /bot
 Query String
 | key  | type   | description          |
 | ---- | ------ | -------------------- |
