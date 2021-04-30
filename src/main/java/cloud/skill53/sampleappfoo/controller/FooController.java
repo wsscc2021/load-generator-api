@@ -25,7 +25,7 @@ public class FooController {
     public GreetDto getGreet() {
         return new GreetDto()
                     .setName("foo")
-                    .setVersion("v1")
+                    .setVersion("v2")
                     .setMessage("Bonjour!");
     }
 
