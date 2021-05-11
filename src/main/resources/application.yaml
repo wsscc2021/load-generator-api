@@ -9,11 +9,14 @@ management:
   server:
     port: 8080
   endpoints:
-    enabled-by-default: false
+    enabled-by-default: true
     web:
       base-path: "/"
+      exposure:
+        include: health, prometheus
       path-mapping:
         health: "healthcheck"
+        prometheus: "prometheus"
   endpoint:
     health:
       enabled: true
