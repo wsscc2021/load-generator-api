@@ -13,6 +13,7 @@ import cloud.skill53.sampleappfoo.dto.GreetDto;
 import cloud.skill53.sampleappfoo.dto.KeyDto;
 import cloud.skill53.sampleappfoo.service.BotService;
 import cloud.skill53.sampleappfoo.service.KeyService;
+import cloud.skill53.sampleappfoo.service.SleepService;
 
 @RestController
 @RequestMapping("/")
@@ -20,6 +21,7 @@ public class FooController {
     @Autowired
     private BotService botService = new BotService();
     private KeyService keyService = new KeyService();
+    private SleepService sleepService = new SleepService();
 
     @GetMapping("")
     public GreetDto getGreet() {
@@ -27,6 +29,11 @@ public class FooController {
                     .setName("foo")
                     .setVersion("v2")
                     .setMessage("Bonjour!");
+    }
+
+    @GetMapping("/sleep")
+    public String getSleep() {
+        return sleepService.sleep();
     }
 
     @GetMapping("/bot")

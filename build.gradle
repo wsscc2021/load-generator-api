@@ -5,7 +5,7 @@ plugins {
 }
 
 group = 'cloud.skill53'
-version = 'v2.1'
+version = 'v2.2'
 sourceCompatibility = '11'
 
 configurations {

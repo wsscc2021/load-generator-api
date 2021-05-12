@@ -12,6 +12,12 @@ Response
 }
 ```
 
+### GET /sleep
+Response (String)
+해당 API는 2초의 지연시간을 가지고 있습니다.
+```
+Success, you did sleep 2 seconds in businiess logic
+```
 
 ### GET /key
 Query String
