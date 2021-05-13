@@ -3,7 +3,7 @@ FROM adoptopenjdk/openjdk11:jre-11.0.10_9-alpine
 
 # Set Argument
 ENV APP_NAME="sample-app-foo"
-ENV APP_VERSION="v2.2"
+ENV APP_VERSION="v2.3"
 
 # Create group and user to run application.
 RUN addgroup -S appgroup \

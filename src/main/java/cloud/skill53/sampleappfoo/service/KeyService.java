@@ -2,6 +2,8 @@ package cloud.skill53.sampleappfoo.service;
 
 import java.util.Random;
 
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 
 import cloud.skill53.sampleappfoo.dto.KeyDto;
@@ -21,17 +23,24 @@ public class KeyService {
         return generatedString;
     }
 
-    public KeyDto generateKey(String name) {
+    public ResponseEntity<?> generateKey(String name) {
         // Key 생성하는 로직 (연산 로직)
         // 서버에 부하를 주기 위해 고의적으로 비효율적인 코드를 작성합니다.
         // String연산에 + 연산자 이용하고, for-each로 1024번 반복하여 1024 길이의 key 생성.
-        String keyString = "";
-        for(int i=0; i<1024; i++) {
-            keyString += getRandomAlphaNumberic(1);
+        try {
+            String keyString = "";
+            for(int i=0; i<1024; i++) {
+                keyString += getRandomAlphaNumberic(1);
+            }
+            KeyDto newKey = new KeyDto()
+                                .setName(name)
+                                .setKey(keyString);
+
+            return new ResponseEntity<>(newKey, HttpStatus.OK);
         }
-        KeyDto newKey = new KeyDto()
-                            .setName(name)
-                            .setKey(keyString);
-        return newKey;
+        catch(Error error) {
+            System.out.println(error);
+            return new ResponseEntity<>("Error Occur!", HttpStatus.OK);
+        }
     }
 }

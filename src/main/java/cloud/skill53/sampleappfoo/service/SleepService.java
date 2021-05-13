@@ -1,17 +1,21 @@
 package cloud.skill53.sampleappfoo.service;
 
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 
 @Service
 public class SleepService {
 
-    public String sleep() {
+    public ResponseEntity<String> sleep() {
         try {
             Thread.sleep(2000);
-            return "Success, you did sleep 2 seconds in busniess logic";
+            String result = "Success, you did sleep 2 seconds in busniess logic";
+            return new ResponseEntity<>(result, HttpStatus.OK);
         } catch(InterruptedException error) {
             System.out.println(error.getMessage());
-            return "Error occur!";
+            String result = "Error Occur";
+            return new ResponseEntity<>(result, HttpStatus.INTERNAL_SERVER_ERROR);
         }
     }
 }
