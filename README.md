@@ -12,6 +12,39 @@ Response
 }
 ```
 
+### GET /error
+Error를 발생시키는 API입니다. Error Rate를 뽑을 때 유용하게 사용할 수 있습니다.
+
+/error
+- response status code: 200
+
+/error?code=400
+- response status code: 400
+
+/error?code=401
+- response status code: 401
+
+/error?code=403
+- response status code: 403
+
+/error?code=404
+- response status code: 404
+
+/error?code=500
+- response status code: 500
+
+/error?code=501
+- response status code: 501
+
+/error?code=502
+- response status code: 502
+
+/error?code=503
+- response status code: 503
+
+/error?code=504
+- response status code: 504
+
 ### GET /sleep
 Response (String)
 해당 API는 2초의 지연시간을 가지고 있습니다.
